@@ -211,6 +211,12 @@ X = [[True, False, True],
      [True, False, True],
      [True, False, True]]
 
+Y = [[True, False, True],
+     [True, False, True],
+     [False, True, False],
+     [False, True, False],
+     [False, True, False]]
+
 Z = [[True, True, True],
      [False, False, True],
      [False, True, False],
