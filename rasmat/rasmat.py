@@ -1,5 +1,5 @@
 import numpy as np
-#import data.numbers_and_letters
+import data.numbers_and_letters
 
 import argparse     # work in terminal
 
