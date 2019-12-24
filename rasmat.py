@@ -144,9 +144,11 @@ def color_wipe_bar(strip, color):
         for j in range(COLS_NUM):
             strip.setPixelColor(i*10+j, color)
         strip.show()
+        time.sleep(0.2)
         for j in range(COLS_NUM):
             strip.setPixelColor(i * 10 + j, Color(0, 0, 0))
         strip.show()
+        time.sleep(0.2)
     strip.show()
 
 def set_number(strip, position, number):
