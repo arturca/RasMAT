@@ -184,7 +184,7 @@ class Clock:
         position = 0
         if current_time != self.previous_time:
             self.previous_time = current_time
-            how_to_wipe = randint(0, 1)
+            how_to_wipe = randint(0, 2)
             print(how_to_wipe)
             if how_to_wipe == 0:
                 color_wipe_bar(strip, Color(randint(0, 255), randint(0, 255), randint(0, 255)))
