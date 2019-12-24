@@ -294,7 +294,7 @@ if __name__ == '__main__':
     # try:
         while True:
             newClock.clock(strip)
-            strip.setBrightness(255)
+            strip.setBrightness(5)
     # except KeyboardInterrupt:
     #     observer.stop()
 
