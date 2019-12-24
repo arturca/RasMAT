@@ -100,7 +100,7 @@ from time import gmtime, strftime
 # for watching
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-
+from random import randint
 # get track title
 import re
 
@@ -148,7 +148,6 @@ def color_wipe_bar(strip, color):
         for j in range(COLS_NUM):
             strip.setPixelColor(i * 10 + j, Color(0, 0, 0))
         strip.show()
-        time.sleep(0.2)
     strip.show()
 
 def set_number(strip, position, number):
@@ -185,7 +184,11 @@ class Clock:
         position = 0
         if current_time != self.previous_time:
             self.previous_time = current_time
-            color_wipe_bar(strip, Color(25, 25, 25))
+            how_to_wipe = randint(0, 1)
+            if how_to_wipe:
+                color_wipe_bar(strip, Color(randint(0, 255), randint(0, 255), randint(0, 255)))
+            else:
+                colorWipe(strip, color(0, 0, 0), 0)
             for char in current_time:
                 if char != ':':
                     set_number(strip, position, int(char))
