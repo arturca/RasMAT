@@ -112,7 +112,8 @@ LED_DMA = 10  # DMA channel to use for generating signal (try 10)
 LED_BRIGHTNESS = 10  # Set to 0 for darkest and 255 for brightest
 LED_INVERT = False  # True to invert the signal (when using NPN transistor level shift)
 LED_CHANNEL = 0  # set to '1' for GPIOs 13, 19, 41, 45 or 53
-
+ROWS_NUM = 10
+COLS_NUM = 10
 # this one create a table that have specific order of elements
 helper_list = []
 k = 0
@@ -138,7 +139,15 @@ def colorWipe(strip, color, wait_ms=1):
         strip.setPixelColor(i, color)
     strip.show()
         # time.sleep(wait_ms/1000.0)
-
+def color_wipe_bar(strip, color):
+    for i in range(ROWS_NUM):
+        for j in range(COLS_NUM):
+            strip.setPixelColor(i*10+j, color)
+        strip.show()
+        for j in range(COLS_NUM):
+            strip.setPixelColor(i * 10 + j, Color(0, 0, 0))
+        strip.show()
+    strip.show()
 
 def set_number(strip, position, number):
     if position == 0:
@@ -162,7 +171,6 @@ def set_number(strip, position, number):
             for j_3 in range(6, 9):
                 if digits_and_letters.digits_list[number][i_3 - 5][j_3 - 6]:
                     strip.setPixelColor(helper_list[i_3][j_3], Color(0, 255, 0))
-
     strip.show()
 
 
@@ -175,7 +183,7 @@ class Clock:
         position = 0
         if current_time != self.previous_time:
             self.previous_time = current_time
-            colorWipe(strip, Color(0, 0, 0))
+            color_wipe_bar(strip, Color(25, 25, 25))
             for char in current_time:
                 if char != ':':
                     set_number(strip, position, int(char))
