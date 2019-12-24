@@ -144,7 +144,7 @@ def color_wipe_bar(strip, color):
         for j in range(COLS_NUM):
             strip.setPixelColor(i*10+j, color)
         strip.show()
-        time.sleep(0.15)
+        time.sleep(0.1)
         for j in range(COLS_NUM):
             strip.setPixelColor(i * 10 + j, Color(0, 0, 0))
         strip.show()
@@ -294,7 +294,7 @@ if __name__ == '__main__':
     # try:
         while True:
             newClock.clock(strip)
-
+            strip.setBrightness(255)
     # except KeyboardInterrupt:
     #     observer.stop()
 
