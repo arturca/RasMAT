@@ -266,10 +266,10 @@ if __name__ == '__main__':
     strip.begin()
 
     # checker
-    event_handler = MyHandler(strip)
-    file_observer = Observer()
-    file_observer.schedule(event_handler, path='/var/log/helper', recursive=False)
-    file_observer.start()
+    # event_handler = MyHandler(strip)
+    # file_observer = Observer()
+    # file_observer.schedule(event_handler, path='/var/log/helper', recursive=False)
+    # file_observer.start()
 
     newClock = Clock('x')
 
@@ -277,13 +277,13 @@ if __name__ == '__main__':
     if not args.clear:
         print('Use "-c" argument to clear LEDs on exit')
 
-    try:
+    # try:
         while True:
             newClock.clock(strip)
-            time.sleep(1)
+            time.sleep(0.5)
 
-    except KeyboardInterrupt:
-        observer.stop()
+    # except KeyboardInterrupt:
+    #     observer.stop()
 
         if args.clear:
             colorWipe(strip, Color(0, 0, 0), 10)
