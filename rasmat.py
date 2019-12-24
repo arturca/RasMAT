@@ -188,7 +188,7 @@ class Clock:
             if how_to_wipe:
                 color_wipe_bar(strip, Color(randint(0, 255), randint(0, 255), randint(0, 255)))
             else:
-                colorWipe(strip, color(0, 0, 0), 0)
+                colorWipe(strip, Color(0, 0, 0), 0)
             for char in current_time:
                 if char != ':':
                     set_number(strip, position, int(char))
