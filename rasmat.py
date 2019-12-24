@@ -144,7 +144,7 @@ def color_wipe_bar(strip, color):
         for j in range(COLS_NUM):
             strip.setPixelColor(i*10+j, color)
         strip.show()
-        time.sleep(0.2)
+        time.sleep(0.15)
         for j in range(COLS_NUM):
             strip.setPixelColor(i * 10 + j, Color(0, 0, 0))
         strip.show()
@@ -185,7 +185,8 @@ class Clock:
         if current_time != self.previous_time:
             self.previous_time = current_time
             how_to_wipe = randint(0, 1)
-            if how_to_wipe:
+            print(how_to_wipe)
+            if how_to_wipe == 0:
                 color_wipe_bar(strip, Color(randint(0, 255), randint(0, 255), randint(0, 255)))
             else:
                 colorWipe(strip, Color(0, 0, 0), 0)
