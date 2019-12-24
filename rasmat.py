@@ -93,7 +93,7 @@ from neopixel import *
 import argparse
 from copy import deepcopy
 
-import digits_and_letters
+import data.numbers_and_letters as digits_and_letters
 import time
 from time import gmtime, strftime
 
