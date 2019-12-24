@@ -136,7 +136,7 @@ def colorWipe(strip, color, wait_ms=1):
     """Wipe color across displayScrollLeft a pixel at a time."""
     for i in range(strip.numPixels()):
         strip.setPixelColor(i, color)
-        strip.show()
+    strip.show()
         # time.sleep(wait_ms/1000.0)
 
 
@@ -280,7 +280,6 @@ if __name__ == '__main__':
     # try:
         while True:
             newClock.clock(strip)
-            time.sleep(0.5)
 
     # except KeyboardInterrupt:
     #     observer.stop()
