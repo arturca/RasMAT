@@ -140,14 +140,24 @@ def colorWipe(strip, color, wait_ms=1):
     strip.show()
         # time.sleep(wait_ms/1000.0)
 def color_wipe_bar(strip, color):
-    for i in range(ROWS_NUM):
-        for j in range(COLS_NUM):
-            strip.setPixelColor(i*10+j, color)
-        strip.show()
-        time.sleep(0.1)
-        for j in range(COLS_NUM):
-            strip.setPixelColor(i * 10 + j, Color(0, 0, 0))
-        strip.show()
+    if randint(0,1):
+        for i in range(ROWS_NUM):
+            for j in range(COLS_NUM):
+                strip.setPixelColor(i*10+j, color)
+            strip.show()
+            time.sleep(0.1)
+            for j in range(COLS_NUM):
+                strip.setPixelColor(i * 10 + j, Color(0, 0, 0))
+            strip.show()
+    else:
+        for i in range(ROWS_NUM, -1, -1):
+            for j in range(COLS_NUM):
+                strip.setPixelColor(i*10+j, color)
+            strip.show()
+            time.sleep(0.1)
+            for j in range(COLS_NUM):
+                strip.setPixelColor(i * 10 + j, Color(0, 0, 0))
+            strip.show()
     strip.show()
 
 def set_number(strip, position, number):
@@ -163,13 +173,13 @@ def set_number(strip, position, number):
                     strip.setPixelColor(helper_list[i_1][j_1], Color(255, 0, 0))
     elif position == 2:
         for i_2 in range(5, 10):
-            for j_2 in range(2, 5):
+            for j_2 in range(3, 6): # 2,5
                 if digits_and_letters.digits_list[number][i_2 - 5][j_2 - 2]:
                     strip.setPixelColor(helper_list[i_2][j_2], Color(0, 255, 0))
 
     elif position == 3:
         for i_3 in range(5, 10):
-            for j_3 in range(6, 9):
+            for j_3 in range(7, 10): # 6,9
                 if digits_and_letters.digits_list[number][i_3 - 5][j_3 - 6]:
                     strip.setPixelColor(helper_list[i_3][j_3], Color(0, 255, 0))
     strip.show()
@@ -185,7 +195,7 @@ class Clock:
         if current_time != self.previous_time:
             self.previous_time = current_time
             how_to_wipe = randint(0, 2)
-            print(how_to_wipe)
+
             if how_to_wipe == 0:
                 color_wipe_bar(strip, Color(randint(0, 255), randint(0, 255), randint(0, 255)))
             else:
