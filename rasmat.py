@@ -173,13 +173,13 @@ def set_number(strip, position, number):
                     strip.setPixelColor(helper_list[i_1][j_1], Color(255, 0, 0))
     elif position == 2:
         for i_2 in range(5, 10):
-            for j_2 in range(3, 6): # 2,5
+            for j_2 in range(2, 5):
                 if digits_and_letters.digits_list[number][i_2 - 5][j_2 - 2]:
                     strip.setPixelColor(helper_list[i_2][j_2], Color(0, 255, 0))
 
     elif position == 3:
         for i_3 in range(5, 10):
-            for j_3 in range(7, 10): # 6,9
+            for j_3 in range(6, 9):
                 if digits_and_letters.digits_list[number][i_3 - 5][j_3 - 6]:
                     strip.setPixelColor(helper_list[i_3][j_3], Color(0, 255, 0))
     strip.show()
