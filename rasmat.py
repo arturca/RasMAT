@@ -89,7 +89,7 @@
 
 
 import numpy as np
-from neopixel import *
+import _rpi_ws281x as ws
 import argparse
 from copy import deepcopy
 
@@ -284,7 +284,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # Create NeoPixel object with appropriate configuration.
-    strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
+    strip = ws(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
 
     # Intialize the library (must be called once before other functions).
     strip.begin()
