@@ -163,12 +163,12 @@ def color_wipe_bar(strip, color):
 def set_number(strip, position, number):
     if position == 0:
         for i_0 in range(0, 5):
-            for j_0 in range(2, 5):
+            for j_0 in range(1, 4):
                 if digits_and_letters.digits_list[number][i_0][j_0 - 2]:
                     strip.setPixelColor(helper_list[i_0][j_0], Color(255, 0, 0))
     elif position == 1:
         for i_1 in range(0, 5):
-            for j_1 in range(6, 9):
+            for j_1 in range(5, 8):
                 if digits_and_letters.digits_list[number][i_1][j_1 - 6]:
                     strip.setPixelColor(helper_list[i_1][j_1], Color(255, 0, 0))
     elif position == 2:
@@ -206,76 +206,6 @@ class Clock:
                     position += 1
 
 
-# class MyHandler(FileSystemEventHandler):
-#     def __init__(self, strip):
-#         self.strip = strip
-#
-#     def get_title(self, last_line):
-#         title = re.search('"(.*)"', last_line)
-#         return title.group(1)
-#
-#     def displayScrollLeft(self, current_frame_array):
-#         colorWipe(self.strip, Color(0, 0, 0))
-#         for i in range(len(current_frame_array[0])):
-#             for j in range(5):
-#                 if current_frame_array[j][i]:
-#                     strip.setPixelColor(helper_list[9 - i][j + 3], Color(255, 223, 0))
-#
-#     def nextFrame(self, current_frame, queue):
-#
-#         if len(current_frame[0]) <= 10:
-#             current_frame = np.c_[current_frame[:, :], queue[:, 0]]
-#         else:
-#             current_frame = np.c_[current_frame[:, 1:], queue[:, 0]]
-#
-#         queue = queue[:, 1:]
-#
-#         return current_frame, queue
-#
-#     def paint_name_running_left(self):
-#         last_line = ''
-#         with open('/var/log/helper/librespot.log', 'r') as f:
-#             lines = f.read().splitlines()
-#             last_line = lines[-1]
-#         if 'Track' in last_line:
-#             title = self.get_title(last_line)
-#         else:
-#             return
-#         helper_queue = []
-#         queue = []
-#
-#         title = str.upper(title)
-#         print('Song title: ', title)
-#
-#         for letter in title:
-#             if letter == " ":
-#                 pass
-#             else:
-#                 helper_queue.append(digits_and_letters.letters_list[ord(letter) - 65])
-#
-#         current_frame = []
-#         for i in range(5):
-#             queue.append([])
-#             current_frame.append([])
-#
-#         for s in range(len(helper_queue)):
-#             for i in range(5):
-#                 for j in range(3):
-#                     queue[i].append(helper_queue[s][i][j])
-#
-#         queue_array = np.array(queue)
-#
-#         current_frame_array = np.array(current_frame)
-#
-#         while len(queue[0]):
-#             self.displayScrollLeft(current_frame_array)
-#             current_frame_array, queue_array = self.nextFrame(current_frame_array, queue_array)
-#             time.sleep(0.4)
-#
-#     def on_modified(self, event):
-#         self.paint_name_running_left()
-#
-
 # Main program logic follows:
 if __name__ == '__main__':
     # Process arguments
@@ -288,13 +218,6 @@ if __name__ == '__main__':
 
     # Intialize the library (must be called once before other functions).
     strip.begin()
-
-    # checker
-    # event_handler = MyHandler(strip)
-    # file_observer = Observer()
-    # file_observer.schedule(event_handler, path='/var/log/helper', recursive=False)
-    # file_observer.start()
-
     newClock = Clock('x')
 
     print('Press Ctrl-C to quit.')
@@ -304,9 +227,77 @@ if __name__ == '__main__':
     # try:
         while True:
             newClock.clock(strip)
-    # except KeyboardInterrupt:
-    #     observer.stop()
 
         if args.clear:
             colorWipe(strip, Color(0, 0, 0), 10)
     observer.join()
+
+    # class MyHandler(FileSystemEventHandler):
+    #     def __init__(self, strip):
+    #         self.strip = strip
+    #
+    #     def get_title(self, last_line):
+    #         title = re.search('"(.*)"', last_line)
+    #         return title.group(1)
+    #
+    #     def displayScrollLeft(self, current_frame_array):
+    #         colorWipe(self.strip, Color(0, 0, 0))
+    #         for i in range(len(current_frame_array[0])):
+    #             for j in range(5):
+    #                 if current_frame_array[j][i]:
+    #                     strip.setPixelColor(helper_list[9 - i][j + 3], Color(255, 223, 0))
+    #
+    #     def nextFrame(self, current_frame, queue):
+    #
+    #         if len(current_frame[0]) <= 10:
+    #             current_frame = np.c_[current_frame[:, :], queue[:, 0]]
+    #         else:
+    #             current_frame = np.c_[current_frame[:, 1:], queue[:, 0]]
+    #
+    #         queue = queue[:, 1:]
+    #
+    #         return current_frame, queue
+    #
+    #     def paint_name_running_left(self):
+    #         last_line = ''
+    #         with open('/var/log/helper/librespot.log', 'r') as f:
+    #             lines = f.read().splitlines()
+    #             last_line = lines[-1]
+    #         if 'Track' in last_line:
+    #             title = self.get_title(last_line)
+    #         else:
+    #             return
+    #         helper_queue = []
+    #         queue = []
+    #
+    #         title = str.upper(title)
+    #         print('Song title: ', title)
+    #
+    #         for letter in title:
+    #             if letter == " ":
+    #                 pass
+    #             else:
+    #                 helper_queue.append(digits_and_letters.letters_list[ord(letter) - 65])
+    #
+    #         current_frame = []
+    #         for i in range(5):
+    #             queue.append([])
+    #             current_frame.append([])
+    #
+    #         for s in range(len(helper_queue)):
+    #             for i in range(5):
+    #                 for j in range(3):
+    #                     queue[i].append(helper_queue[s][i][j])
+    #
+    #         queue_array = np.array(queue)
+    #
+    #         current_frame_array = np.array(current_frame)
+    #
+    #         while len(queue[0]):
+    #             self.displayScrollLeft(current_frame_array)
+    #             current_frame_array, queue_array = self.nextFrame(current_frame_array, queue_array)
+    #             time.sleep(0.4)
+    #
+    #     def on_modified(self, event):
+    #         self.paint_name_running_left()
+    #
