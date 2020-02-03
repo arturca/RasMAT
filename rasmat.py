@@ -163,8 +163,8 @@ def color_wipe_bar(strip, color):
 def set_number(strip, position, number):
     if position == 0:
         for i_0 in range(0, 5):
-            for j_0 in range(1, 4):
-                if digits_and_letters.digits_list[number][i_0][j_0 - 1]:
+            for j_0 in range(2, 5):
+                if digits_and_letters.digits_list[number][i_0][j_0 - 2]:
                     strip.setPixelColor(helper_list[i_0][j_0], Color(255, 0, 0))
     elif position == 1:
         for i_1 in range(0, 5):
