@@ -104,6 +104,10 @@ from random import randint
 # get track title
 import re
 
+# for observer
+import os
+#import time
+
 # LED strip configuration:
 LED_COUNT = 100  # Number of LED pixels.
 LED_PIN = 10  # GPIO pin connected to the pixels (10 uses SPI /dev/spidev0.0 (must be in directory!!! find it)).
@@ -206,6 +210,15 @@ class Clock:
                     position += 1
 
 
+def check_logs_file(filename):
+    logs_file = open(filename)
+    lines_of_file = logs_file.readlines()
+    logs_file.close()
+    if "loaded" in lineList[len(lineList)-1]:
+        colorWipe(strip, Color(150, 150, 150), 0)
+        time.sleep(5)
+    return
+
 # Main program logic follows:
 if __name__ == '__main__':
     # Process arguments
@@ -227,6 +240,7 @@ if __name__ == '__main__':
     # try:
         while True:
             newClock.clock(strip)
+            check_logs_file('/var/log/librespot.log')
 
         if args.clear:
             colorWipe(strip, Color(0, 0, 0), 10)
