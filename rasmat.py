@@ -190,8 +190,9 @@ def set_number(strip, position, number):
 
 
 class Clock:
-    def __init__(self, previosus_time):
+    def __init__(self, previosus_time, previous_line):
         self.previous_time = previosus_time
+        self.previous_line = previous_line
 
     def clock(self, strip):
         current_time = strftime("%H:%M", time.localtime())
@@ -209,19 +210,19 @@ class Clock:
                     set_number(strip, position, int(char))
                     position += 1
 
+    def check_logs_file(self, filename):
+        logs_file = open(filename)
+        lines_of_file = logs_file.readlines()
+        logs_file.close()
+        if ("loaded" in lines_of_file[len(lines_of_file) - 1]) \
+                and (lines_of_file[len(lines_of_file) - 1] != self.previous_line):
+            self.previous_line = lines_of_file[len(lines_of_file) - 1]
+            colorWipe(strip, Color(150, 150, 150), 0)
+            time.sleep(1)
+        return
+
 
 previous_name = 'rmsd'
-
-
-def check_logs_file(filename, previous_name):
-    logs_file = open(filename)
-    lines_of_file = logs_file.readlines()
-    logs_file.close()
-    if "loaded" in lines_of_file[len(lines_of_file)-1] and lines_of_file[len(lines_of_file)-1] != previous_name:
-        previous_name = lines_of_file[len(lines_of_file)-1]
-        colorWipe(strip, Color(150, 150, 150), 0)
-        time.sleep(5)
-    return
 
 # Main program logic follows:
 if __name__ == '__main__':
@@ -235,7 +236,7 @@ if __name__ == '__main__':
 
     # Intialize the library (must be called once before other functions).
     strip.begin()
-    newClock = Clock('x')
+    newClock = Clock('x', 'empty')
 
     print('Press Ctrl-C to quit.')
     if not args.clear:
@@ -244,7 +245,7 @@ if __name__ == '__main__':
     # try:
         while True:
             newClock.clock(strip)
-            check_logs_file('/var/log/librespot.log', previous_name)
+            newClock.check_logs_file('/var/log/librespot.log')
 
         if args.clear:
             colorWipe(strip, Color(0, 0, 0), 10)
