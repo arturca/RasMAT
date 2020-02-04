@@ -219,6 +219,7 @@ class Clock:
             self.previous_line = lines_of_file[len(lines_of_file) - 1]
             colorWipe(strip, Color(150, 150, 150), 0)
             time.sleep(1)
+            self.previous_time = 'x'
         return
 
 
