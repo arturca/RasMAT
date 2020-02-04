@@ -209,9 +209,11 @@ class Clock:
                     set_number(strip, position, int(char))
                     position += 1
 
-previous_name = ""
 
-def check_logs_file(filename):
+previous_name = 'rmsd'
+
+
+def check_logs_file(filename, previous_name):
     logs_file = open(filename)
     lines_of_file = logs_file.readlines()
     logs_file.close()
@@ -242,7 +244,7 @@ if __name__ == '__main__':
     # try:
         while True:
             newClock.clock(strip)
-            check_logs_file('/var/log/librespot.log')
+            check_logs_file('/var/log/librespot.log', previous_name)
 
         if args.clear:
             colorWipe(strip, Color(0, 0, 0), 10)
