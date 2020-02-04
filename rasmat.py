@@ -214,7 +214,7 @@ def check_logs_file(filename):
     logs_file = open(filename)
     lines_of_file = logs_file.readlines()
     logs_file.close()
-    if "loaded" in lineList[len(lineList)-1]:
+    if "loaded" in lines_of_file[len(lines_of_file)-1]:
         colorWipe(strip, Color(150, 150, 150), 0)
         time.sleep(5)
     return
