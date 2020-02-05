@@ -49,7 +49,7 @@ class Clock:
                 i += 1
             else:
                 self.queue = np.column_stack((self.queue, np.array(digits_and_letters.letters_list[2])))     # digits_and_letters.letters_list[ord(letter) - 65]
-        self.paint_scorlling_title()
+        self.paint_scrolling_name()
 
 
     def check_logs_file(self, filename):
