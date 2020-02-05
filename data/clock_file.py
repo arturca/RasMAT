@@ -23,7 +23,7 @@ class Clock:
                 colorWipe(self.strip, Color(0, 0, 0), 0)
             for char in current_time:
                 if char != ':':
-                    set_number(strip, position, int(char))
+                    set_number(self.strip, position, int(char))
                     position += 1
 
     def print_song_name(self, name):
@@ -45,7 +45,7 @@ class Clock:
             name_of_song = re.search(r"<(.*)\>", lines_of_file[len(lines_of_file) - 1]).group(1)
             self.print_song_name(name_of_song)
             # self.previous_line = lines_of_file[len(lines_of_file) - 1]
-            # colorWipe(strip, Color(150, 150, 150), 0)
+            # colorWipe(self.strip, Color(150, 150, 150), 0)
             # time.sleep(1)
             # self.previous_time = 'x'
         return
