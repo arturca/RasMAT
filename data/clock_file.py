@@ -27,13 +27,16 @@ class Clock:
                     position += 1
 
     def paint_scrolling_name(self):
+        print(self.queue)
         while len(self.queue) > 10:
             colorWipe(self.strip, Color(0, 0, 0), 0)
+            self.strip.show()
             for i in range(10):
                 for j in range(10):
                     if self.queue[i][j]:
                         self.strip.setPixelColor(helper_list[i][j], Color(255, 0, 0))
             self.strip.show()
+            self.queue = self.queue[:, 1:]
             time.sleep(1)
 
 
@@ -49,6 +52,7 @@ class Clock:
                 i += 1
             else:
                 self.queue = np.column_stack((self.queue, np.array(digits_and_letters.letters_list[2])))     # digits_and_letters.letters_list[ord(letter) - 65]
+
         self.paint_scrolling_name()
 
 
