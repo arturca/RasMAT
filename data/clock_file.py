@@ -1,6 +1,8 @@
 import time
 from time import gmtime, strftime
+from random import randint
 
+from default_function_and_settings import *
 
 class Clock:
     def __init__(self, previosus_time, previous_line):
