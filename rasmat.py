@@ -123,7 +123,7 @@ if __name__ == '__main__':
 
     # Intialize the library (must be called once before other functions).
     strip.begin()
-    newClock = Clock('x', 'empty')
+    newClock = Clock('x', 'empty', strip)
 
     print('Press Ctrl-C to quit.')
     if not args.clear:
@@ -131,7 +131,7 @@ if __name__ == '__main__':
 
     # try:
         while True:
-            newClock.clock(strip)
+            newClock.clock()
             newClock.check_logs_file('/var/log/librespot.log')
 
         if args.clear:
