@@ -1,9 +1,14 @@
 import unittest
-from rasmat import Clock
-clock = Clock()
-clock.tick()
+from data.clock import Clock
 
 
-class ClockTEST(unittest.TestCase):
-    def test(self):
-        self.assertEqual(clock.time_str, time.strftime("%H:M"))
+class TestClock(unittest.TestCase):
+    def test_print_song_name(self):
+        print(3)
+        newClock = Clock('x', 'x')
+        result = newClock.print_song_name("Should print this name")
+        self.assertEqual(result, "Should print this name")
+
+
+if __name__ == '__main__':
+    unittest.main()

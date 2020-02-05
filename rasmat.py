@@ -103,7 +103,7 @@ from time import gmtime, strftime
 from random import randint
 # get track title
 import re
-
+from data.clock import Clock
 # for observer
 import os
 #import time
@@ -189,41 +189,8 @@ def set_number(strip, position, number):
     strip.show()
 
 
-class Clock:
-    def __init__(self, previosus_time, previous_line):
-        self.previous_time = previosus_time
-        self.previous_line = previous_line
 
-    def clock(self, strip):
-        current_time = strftime("%H:%M", time.localtime())
-        position = 0
-        if current_time != self.previous_time:
-            self.previous_time = current_time
-            how_to_wipe = randint(0, 2)
-
-            if how_to_wipe == 0:
-                color_wipe_bar(strip, Color(randint(0, 255), randint(0, 255), randint(0, 255)))
-            else:
-                colorWipe(strip, Color(0, 0, 0), 0)
-            for char in current_time:
-                if char != ':':
-                    set_number(strip, position, int(char))
-                    position += 1
-
-    def check_logs_file(self, filename):
-        logs_file = open(filename)
-        lines_of_file = logs_file.readlines()
-        logs_file.close()
-        if ("loaded" in lines_of_file[len(lines_of_file) - 1]) \
-                and (lines_of_file[len(lines_of_file) - 1] != self.previous_line):
-            self.previous_line = lines_of_file[len(lines_of_file) - 1]
-            colorWipe(strip, Color(150, 150, 150), 0)
-            time.sleep(1)
-            self.previous_time = 'x'
-        return
-
-
-previous_name = 'rmsd'
+# previous_name = 'rmsd'
 
 # Main program logic follows:
 if __name__ == '__main__':
