@@ -3,6 +3,7 @@ import numpy as np
 from rpi_ws281x import ws, Color, Adafruit_NeoPixel
 import argparse
 from copy import deepcopy
+from random import randint
 
 import data.numbers_and_letters as digits_and_letters
 import time

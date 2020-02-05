@@ -1,6 +1,5 @@
 import time
 from time import gmtime, strftime
-from random import randint
 import re
 from default_function_and_settings import *
 
@@ -21,7 +20,7 @@ class Clock:
             if how_to_wipe == 0:
                 color_wipe_bar(self.strip, Color(randint(0, 255), randint(0, 255), randint(0, 255)))
             else:
-                colorWipe(strip, Color(0, 0, 0), 0)
+                colorWipe(self.strip, Color(0, 0, 0), 0)
             for char in current_time:
                 if char != ':':
                     set_number(strip, position, int(char))
