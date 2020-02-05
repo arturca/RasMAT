@@ -1,14 +1,14 @@
 import time
 from time import gmtime, strftime
 import re
-from default_function_and_settings import *
-
+from data.default_function_and_settings import *
+import numpy as np
 class Clock:
     def __init__(self, previosus_time, previous_line, strip):
         self.previous_time = previosus_time
         self.previous_line = previous_line
         self.strip = strip
-        self.queue = []
+        self.queue = np.array([])
 
     def clock(self):
         current_time = strftime("%H:%M", time.localtime())
@@ -26,14 +26,31 @@ class Clock:
                     set_number(self.strip, position, int(char))
                     position += 1
 
+    def paint_scrolling_name(self):
+        while len(self.queue) > 10:
+            colorWipe(self.strip, Color(0, 0, 0), 0)
+            for i in range(10):
+                for j in range(10):
+                    if self.queue[i][j]:
+                        self.strip.setPixelColor(helper_list[i][j], Color(255, 0, 0))
+            self.strip.show()
+            time.sleep(1)
+
+
     def print_song_name(self, name):
         colorWipe(self.strip, Color(150, 150, 150), 0)
-
-        self.previous_time = 'x'
-        time.sleep(1)
-        return
+        #time.sleep(1)
+        #return
+        i = 0
+        name = str.upper(name)
         for letter in name:
-            self.queue.append(digits_and_letters.letters_list[ord(letter) - 65])
+            if i == 0:
+                self.queue = np.array(digits_and_letters.letters_list[ord(letter) - 65])
+                i += 1
+            else:
+                self.queue = np.column_stack(self.queue, np.array(digits_and_letters.letters_list[ord(letter) - 65]))
+
+        self.paint_scorlling_title()
 
 
     def check_logs_file(self, filename):
@@ -43,8 +60,8 @@ class Clock:
         if ("loaded" in lines_of_file[len(lines_of_file) - 1]) \
                 and (lines_of_file[len(lines_of_file) - 1] != self.previous_line):
             name_of_song = re.search(r"<(.*)\>", lines_of_file[len(lines_of_file) - 1]).group(1)
+            self.previous_line = lines_of_file[len(lines_of_file) - 1]
             self.print_song_name(name_of_song)
-            # self.previous_line = lines_of_file[len(lines_of_file) - 1]
             # colorWipe(self.strip, Color(150, 150, 150), 0)
             # time.sleep(1)
             # self.previous_time = 'x'

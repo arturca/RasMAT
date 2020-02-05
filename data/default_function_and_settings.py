@@ -1,6 +1,6 @@
 
 import numpy as np
-from rpi_ws281x import ws, Color, Adafruit_NeoPixel
+# from rpi_ws281x import ws, Color, Adafruit_NeoPixel
 import argparse
 from copy import deepcopy
 from random import randint
