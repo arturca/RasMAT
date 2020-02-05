@@ -1,4 +1,6 @@
 import time
+from time import gmtime, strftime
+
 
 class Clock:
     def __init__(self, previosus_time, previous_line):
