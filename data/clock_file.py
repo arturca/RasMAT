@@ -5,12 +5,13 @@ import re
 from default_function_and_settings import *
 
 class Clock:
-    def __init__(self, previosus_time, previous_line):
+    def __init__(self, previosus_time, previous_line, strip):
         self.previous_time = previosus_time
         self.previous_line = previous_line
+        self.strip = strip
         self.queue = []
 
-    def clock(self, strip):
+    def clock(self):
         current_time = strftime("%H:%M", time.localtime())
         position = 0
         if current_time != self.previous_time:
@@ -18,7 +19,7 @@ class Clock:
             how_to_wipe = randint(0, 2)
 
             if how_to_wipe == 0:
-                color_wipe_bar(strip, Color(randint(0, 255), randint(0, 255), randint(0, 255)))
+                color_wipe_bar(self.strip, Color(randint(0, 255), randint(0, 255), randint(0, 255)))
             else:
                 colorWipe(strip, Color(0, 0, 0), 0)
             for char in current_time:
@@ -27,7 +28,7 @@ class Clock:
                     position += 1
 
     def print_song_name(self, name):
-        colorWipe(strip, Color(150, 150, 150), 0)
+        colorWipe(self.strip, Color(150, 150, 150), 0)
 
         self.previous_time = 'x'
         time.sleep(1)
