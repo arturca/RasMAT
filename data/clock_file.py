@@ -48,7 +48,7 @@ class Clock:
                 self.queue = np.array(digits_and_letters.letters_list[ord(letter) - 65])
                 i += 1
             else:
-                self.queue = np.column_stack(self.queue, np.array(digits_and_letters.letters_list[ord(letter) - 65]))
+                self.queue = np.column_stack((self.queue, np.array(digits_and_letters.letters_list[ord(letter) - 65])))
 
         self.paint_scorlling_title()
 
