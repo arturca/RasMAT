@@ -1,7 +1,7 @@
 import time
 from time import gmtime, strftime
 from random import randint
-
+import re
 from default_function_and_settings import *
 
 class Clock:
