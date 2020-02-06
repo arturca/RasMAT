@@ -40,7 +40,7 @@ class Clock:
                         self.strip.setPixelColor(helper_list[i+2][j], Color(255, 0, 0))
             self.strip.show()
             print(i, "-- druk")
-            time.sleep(0.8)
+            time.sleep(0.4)
             self.queue = self.queue[:, 1:]
             time.sleep(1)
 
