@@ -1,10 +1,11 @@
-
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import re
 from data.default_function_and_settings import *
 import numpy as np
+
+
 class Clock:
     def __init__(self, previosus_time, previous_line, strip):
         self.previous_time = previosus_time
