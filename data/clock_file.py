@@ -1,5 +1,9 @@
 import time
 from time import gmtime, strftime
+# you need to line below to use more colmplex symoblols like 'ę'
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import re
 from data.default_function_and_settings import *
 import numpy as np
@@ -48,6 +52,8 @@ class Clock:
         for i in range(len(title)):
             if title[i] == 'Ą':
                 title[i] = 'A'
+            elif title[i] == 'Ę':
+                title[i] = 'E'
             elif title[i] == 'Ć':
                 title[i] = 'A'
             elif title[i] == 'Ł':
