@@ -35,10 +35,10 @@ class Clock:
             self.strip.show()
             time.sleep(2)
             print("juz po")
-            for i in range(10):
+            for i in range(5):
                 for j in range(10):
                     if self.queue[i][j]:
-                        self.strip.setPixelColor(helper_list[i][j], Color(255, 0, 0))
+                        self.strip.setPixelColor(helper_list[i+2][j], Color(255, 0, 0))
             self.strip.show()
             print(i, "-- druk")
             time.sleep(5)
