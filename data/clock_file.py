@@ -58,7 +58,8 @@ class Clock:
             else:
                 # create 'space line'
                 self.queue = np.column_stack((self.queue, np.array([[False], [False], [False], [False], [False]])))
-                if 0 < ord(letter) - 65 < len(digits_and_letters.letters_list):
+                if 0 <= ord(letter) - 65 < len(digits_and_letters.letters_list):
+                    print(letter)
                     self.queue = np.column_stack((self.queue, np.array(digits_and_letters.letters_list[ord(letter) - 65])))
 
         self.paint_scrolling_name()
