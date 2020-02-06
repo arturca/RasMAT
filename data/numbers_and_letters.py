@@ -46,9 +46,9 @@ digit_six = [[True, True, True],
 
 digit_seven = [[True, True, True],
                [False, False, True],
-               [False, False, True],
-               [False, False, True],
-               [False, False, True]]
+               [False, True, False],
+               [True, False, False],
+               [True, False, False]]
 
 digit_eight = [[True, True, True],
                [True, False, True],
