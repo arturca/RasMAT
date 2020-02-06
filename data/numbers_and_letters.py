@@ -204,7 +204,7 @@ U = [[True, False, False, True],
      [True, False, False, True],
      [True, False, False, True],
      [True, False, False, True],
-     [True, False, True, True],
+     [True, False, False, True],
      [True, True, True, True]]
 
 V = [[True, False, False, True],
