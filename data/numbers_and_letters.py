@@ -186,12 +186,12 @@ R = [[True, True, True, False],
      [True, False, False, True],
      [True, False, False, True]]
 
-S = [[False, True, True, False],
-     [True, False, False, False],
+S = [[False, True, True, True],
+     [True, False, False, True],
      [True, True, True, False],
      [False, False, False, True],
-     [False, False, False, True],
-     [False, True, True, False]]
+     [True, False, False, True],
+     [True, True, True, False]]
 
 T = [[True, True, True, True],
      [False, True, False, False],
@@ -235,8 +235,8 @@ X = [[True, False, True, True],
      [False, True, True, False],
      [True, False, False, True]]
 
-Y = [[True, False, True, True],
-     [True, False, True, True],
+Y = [[True, False, True, False],
+     [True, False, True, False],
      [False, True, False, False],
      [False, True, False, False],
      [False, True, False, False],
