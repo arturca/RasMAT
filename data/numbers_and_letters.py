@@ -81,12 +81,12 @@ B = [[True, True, True, False],
      [True, False, False, True],
      [True, True, True, False]]
 
-C = [[False, True, True, True],
+C = [[False, True, True, False],
      [True, False, False, True],
      [True, False, False, False],
      [True, False, False, False],
      [True, False, False, True],
-     [False, True, True, True]]
+     [False, True, True, False]]
 
 D = [[True, True, True, False],
      [True, False, False, True],
@@ -193,7 +193,7 @@ S = [[False, True, True, False],
      [True, False, False, True],
      [False, True, True, False]]
 
-T = [[True, True, True, True],
+T = [[True, True, True, False],
      [False, True, False, False],
      [False, True, False, False],
      [False, True, False, False],

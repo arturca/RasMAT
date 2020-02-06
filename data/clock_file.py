@@ -75,7 +75,7 @@ class Clock:
         for letter in name:
                 if 0 <= ord(letter) - 65 < len(digits_and_letters.letters_list):
                     self.queue = np.column_stack((self.queue, np.array(digits_and_letters.letters_list[ord(letter) - 65])))
-                    if letter != 'I' and letter != 'Y' and letter != 'L' and letter != 'E':
+                    if letter != 'I' and letter != 'Y' and letter != 'L' and letter != 'E' and letter != 'T':
                         self.queue = np.column_stack((self.queue,
                                                       np.array(6*[[False]])))
         self.queue = np.column_stack((self.queue, np.array(6*[10*[False]])))
