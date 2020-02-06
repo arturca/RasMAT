@@ -97,7 +97,7 @@ D = [[True, True, True, False],
 
 E = [[True, True, True, True],
      [True, False, False, False],
-     [True, True, True, True],
+     [True, True, True, False],
      [True, False, False, False],
      [True, False, False, False],
      [True, True, True, True]]
@@ -149,7 +149,7 @@ L = [[True, False, False, False],
      [True, False, False, False],
      [True, False, False, False],
      [True, False, False, False],
-     [True, True, True, True]]
+     [True, True, True, False]]
 
 M = [[True, False, False, True],
      [True, True, True, True],
@@ -186,12 +186,12 @@ R = [[True, True, True, False],
      [True, False, False, True],
      [True, False, False, True]]
 
-S = [[False, True, True, True],
+S = [[False, True, True, False],
      [True, False, False, True],
      [True, True, True, False],
      [False, False, False, True],
      [True, False, False, True],
-     [True, True, True, False]]
+     [False, True, True, False]]
 
 T = [[True, True, True, True],
      [False, True, False, False],
