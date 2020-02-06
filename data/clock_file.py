@@ -57,8 +57,8 @@ class Clock:
                 title[i] = 'N'
             elif title[i] == 'Ó':
                 title[i] = 'O'
-            elif title[i] == 'S':
-                title[i] = 'Ś'
+            elif title[i] == 'Ś':
+                title[i] = 'S'
             elif title[i] == 'Ń':
                 title[i] = 'N'
             elif title[i] == 'Ź' or title[i] == 'Ż':
