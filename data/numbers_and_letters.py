@@ -95,12 +95,12 @@ D = [[True, True, True, False],
      [True, False, False, True],
      [True, True, True, False]]
 
-E = [[True, True, True, True],
+E = [[True, True, True, False],
      [True, False, False, False],
      [True, True, True, False],
      [True, False, False, False],
      [True, False, False, False],
-     [True, True, True, True]]
+     [True, True, True, False]]
 
 F = [[True, True, True, True],
      [True, False, False, False],

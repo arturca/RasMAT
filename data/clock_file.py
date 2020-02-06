@@ -40,7 +40,7 @@ class Clock:
                         self.strip.setPixelColor(helper_list[i+2][j], Color(255, 0, 0))
             self.strip.show()
             self.queue = self.queue[:, 1:]
-            time.sleep(0.25)
+            time.sleep(0.2)
         self.previous_time = 'x'
 
     def get_rid_of_polish_sign(self, title):
@@ -75,7 +75,7 @@ class Clock:
         for letter in name:
                 if 0 <= ord(letter) - 65 < len(digits_and_letters.letters_list):
                     self.queue = np.column_stack((self.queue, np.array(digits_and_letters.letters_list[ord(letter) - 65])))
-                    if letter != 'I' and letter != 'Y' and letter != 'L':
+                    if letter != 'I' and letter != 'Y' and letter != 'L' and letter != 'E':
                         self.queue = np.column_stack((self.queue,
                                                       np.array(6*[[False]])))
         self.queue = np.column_stack((self.queue, np.array(6*[10*[False]])))
