@@ -235,12 +235,12 @@ X = [[True, False, True, True],
      [False, True, True, False],
      [True, False, False, True]]
 
-Y = [[True, False, False, True],
-     [True, False, False, True],
-     [False, True, True, False],
-     [False, True, True, False],
-     [False, True, True, False],
-     [False, False, True, False]]
+Y = [[True, False, True, True],
+     [True, False, True, True],
+     [False, True, False, False],
+     [False, True, False, False],
+     [False, True, False, False],
+     [False, True, False, False]]
 
 Z =[[True, True, True, True],
      [False, False, False, True],
