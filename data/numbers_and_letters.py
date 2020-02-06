@@ -123,12 +123,12 @@ H = [[True, False, False, True],
      [True, False, False, True],
      [True, False, False, True]]
 
-I = [[False, True, True, False],
-     [False, True, True, False],
-     [False, True, True, False],
-     [False, True, True, False],
-     [False, True, True, False],
-     [False, True, True, False]]
+I = [[True, True, True, False],
+     [False, True, False, False],
+     [False, True, False, False],
+     [False, True, False, False],
+     [False, True, False, False],
+     [True, True, True, False]]
 
 J = [[False, False, True, False],
      [False, False, True, False],
@@ -244,7 +244,7 @@ Y = [[True, False, False, True],
 
 Z =[[True, True, True, True],
      [False, False, False, True],
-     [False, True, True, False],
+     [False, False, True, False],
      [False, True, False, False],
      [True, False, False, False],
      [True, True, True, True]]
