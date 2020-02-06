@@ -34,7 +34,7 @@ class Clock:
             colorWipe(self.strip, Color(0, 0, 0), 0)
             self.strip.show()
             print("juz po")
-            for i in range(5):
+            for i in range(6):
                 for j in range(10):
                     if self.queue[i][j]:
                         self.strip.setPixelColor(helper_list[i+2][j], Color(255, 0, 0))
@@ -57,11 +57,12 @@ class Clock:
                 i += 1
             else:
                 # create 'space line'
-                self.queue = np.column_stack((self.queue, np.array([[False], [False], [False], [False], [False]])))
+
                 if 0 <= ord(letter) - 65 < len(digits_and_letters.letters_list):
                     print(letter)
                     self.queue = np.column_stack((self.queue, np.array(digits_and_letters.letters_list[ord(letter) - 65])))
-
+                    self.queue = np.column_stack((self.queue,
+                                                  np.array([[False], [False], [False], [False], [False], [False]])))
         self.paint_scrolling_name()
 
 

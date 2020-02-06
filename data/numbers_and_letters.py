@@ -67,161 +67,187 @@ digits_list = [digit_zero, digit_one, digit_two, digit_three, digit_four, digit_
 
 ## Letters
 
-A = [[False, True, False],
-     [True, False, True],
-     [True, True, True],
-     [True, False, True],
-     [True, False, True]]
+A = [[False, True, True, False],
+    [True, False, False, True],
+     [True, True, True, True],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, False, False, True]]
 
-B = [[True, True, True],
-     [True, False, True],
-     [True, True, True],
-     [True, False, True],
-     [True, True, True]]
+B = [[True, True, True, False],
+     [True, False, False, True],
+     [True, True, True, False],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, True, True, False]]
 
-C = [[True, True, True],
-     [True, False, True],
-     [True, True, True],
-     [True, False, True],
-     [True, True, True]]
+C = [[True, True, True, True],
+     [True, False, False, True],
+     [True, False, False, False],
+     [True, False, False, False],
+     [True, False, False, True],
+     [True, True, True, True]]
 
-D = [[True, False, True],
-     [True, False, True],
-     [True, False, True],
-     [True, False, True],
-     [True, True, True]]
+D = [[True, True, True, True],
+     [True, False, True, True],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, False, True, True],
+     [True, True, True, True]]
 
-E = [[True, True, True],
-     [True, False, False],
-     [True, True, False],
-     [True, False, False],
-     [True, True, True]]
+E = [[True, True, True, True],
+     [True, False, False, False],
+     [True, True, True, True],
+     [True, False, False, False],
+     [True, False, False, False],
+     [True, True, True, True]]
 
-F = [[True, True, True],
-     [True, False, False],
-     [True, True, False],
-     [True, False, False],
-     [True, False, False]]
+F = [[True, True, True, True],
+     [True, False, False, False],
+     [True, True, True, True],
+     [True, False, False, False],
+     [True, False, False, False],
+     [True, False, False, False]]
 
-G = [[True, True, True],
-     [True, False, False],
-     [True, False, True],
-     [True, False, True],
-     [True, False, True]]
+G = [[True, True, True, True],
+     [True, False, False, False],
+     [True, True, True, True],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, True, True, True]]
 
-H = [[True, False, True],
-     [True, False, True],
-     [True, True, True],
-     [True, False, True],
-     [True, False, True]]
+H = [[True, False, False, True],
+     [True, False, False, False],
+     [True, True, True, True],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, False, False, True]]
 
-I = [[False, True, False],
-     [False, True, False],
-     [False, True, False],
-     [False, True, False],
-     [False, True, False]]
+I = [[False, True, True, False],
+     [False, True, True, False],
+     [False, True, True, False],
+     [False, True, True, False],
+     [False, True, True, False],
+     [False, True, True, False]]
 
-J = [[False, True, True],
-     [False, False, True],
-     [False, False, True],
-     [False, False, True],
-     [True, True, True]]
+J = [[False, False, True, False],
+     [False, False, True, False],
+     [False, False, True, False],
+     [True, False, True, False],
+     [True, False, True, False],
+     [True, True, True, False]]
 
-K = [[True, False, True],
-     [True, True, False],
-     [True, False, False],
-     [True, True, False],
-     [True, False, True]]
+K = [[True, False, False, True],
+     [True, False, True, False],
+     [True, True, False, False],
+     [True, False, False, False],
+     [True, False, True, False],
+     [True, False, False, True]]
 
-L = [[True, False, False],
-     [True, False, False],
-     [True, False, False],
-     [True, False, True],
-     [True, True, True]]
+L = [[True, False, False, False],
+     [True, False, False, False],
+     [True, False, False, False],
+     [True, False, False, False],
+     [True, False, False, False],
+     [True, True, True, True]]
 
-M = [[True, False, True],
-     [True, True, True],
-     [True, False, True],
-     [True, False, True],
-     [True, False, True]]
+M = [[True, False, False, True],
+     [True, True, True, True],
+     [True, True, True, True],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, False, False, True]]
 
-N = [[True, False, True],
-     [True, False, True],
-     [True, True, True],
-     [True, False, True],
-     [True, False, True]]
+N = [[True, False, False, True],
+     [True, True, False, True],
+     [True, True, True, True],
+     [True, False, True, True],
+     [True, False, True, True],
+     [True, False, False, True]]
 
-O = [[True, True, True],
-     [True, False, True],
-     [True, False, True],
-     [True, False, True],
-     [True, True, True]]
+O = [[False, True, True, False],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, False, False, True],
+     [False, True, True, False]]
 
-P = [[True, True, True],
-     [True, False, True],
-     [True, True, True],
-     [True, False, False],
-     [True, False, False]]
+P = [[True, True, True, False],
+     [True, False, False, True],
+     [True, True, True, False],
+     [True, False, False, False],
+     [True, False, False, False],
+     [True, False, False, False]]
 
-R = [[True, True, True],
-     [True, False, True],
-     [True, True, True],
-     [True, False, True],
-     [True, False, True]]
+R = [[True, True, True, False],
+     [True, False, False, True],
+     [True, True, True, False],
+     [True, False, True, False],
+     [True, False, False, True],
+     [True, False, False, True]]
 
-S = [[True, True, True],
-     [True, False, False],
-     [True, True, True],
-     [False, False, True],
-     [True, True, True]]
+S = [[False, True, True, False],
+     [True, False, False, False],
+     [True, True, True, False],
+     [False, False, False, True],
+     [False, False, False, True],
+     [False, True, True, False]]
 
-T = [[True, True, True],
-     [False, True, False],
-     [False, True, False],
-     [False, True, False],
-     [False, True, False]]
+T = [[True, True, True, True],
+     [False, True, False, False],
+     [False, True, False, False],
+     [False, True, False, False],
+     [False, True, False, False],
+     [False, True, False, False]]
 
-U = [[True, False, True],
-     [True, False, True],
-     [True, False, True],
-     [True, False, True],
-     [True, True, True]]
+U = [[True, False, False, True],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, False, True, True],
+     [True, True, True, True]]
 
-V = [[True, False, True],
-     [True, False, True],
-     [True, False, True],
-     [False, False, False],
-     [False, True, False]]
+V = [[True, False, False, True],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, False, False, True],
+     [False, True, True, False],
+     [False, True, True, False]]
 
-W = [[True, False, True],
-     [True, False, True],
-     [True, False, True],
-     [True, True, True],
-     [True, False, True]]
+W = [[True, False, False, True],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, True, True, True],
+     [True, False, False, True],
+     [True, False, False, True]]
 
-Q = [[True, True, True],
-     [True, False, True],
-     [True, False, True],
-     [True, True, True],
-     [True, True, True]]
+Q = [[False, True, True, False],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, False, False, True],
+     [True, False, True, False],
+     [False, True, False, True]]
 
-X = [[True, False, True],
-     [True, False, True],
-     [False, True, False],
-     [True, False, True],
-     [True, False, True]]
+X = [[True, False, True, True],
+     [False, True, True, False],
+     [False, True, True, False],
+     [False, True, True, False],
+     [False, True, True, False],
+     [True, False, False, True]]
 
-Y = [[True, False, True],
-     [True, False, True],
-     [False, True, False],
-     [False, True, False],
-     [False, True, False]]
+Y = [[True, False, False, True],
+     [True, False, False, True],
+     [False, True, True, False],
+     [False, True, True, False],
+     [False, True, True, False],
+     [False, False, True, False]]
 
-Z = [[True, True, True],
-     [False, False, True],
-     [False, True, False],
-     [True, False, False],
-     [True, True, True]]
+Z =[[False, True, True, True],
+     [False, False, False, True],
+     [False, True, True, False],
+     [False, True, False, False],
+     [True, True, False, False],
+     [True, True, True, True]]
 
 
 letters_list = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z]
