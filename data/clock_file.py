@@ -1,6 +1,6 @@
 import time
 from time import gmtime, strftime
-# you need to line below to use more colmplex symoblols like 'ę'
+# you need to line below to use more complex like polish symbols
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
