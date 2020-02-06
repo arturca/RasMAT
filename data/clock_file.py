@@ -44,7 +44,7 @@ class Clock:
         self.previous_time = 'x'
 
     def get_rid_of_polish_sign(self, title):
-        new_title = list(title)
+        new_title = title
         for i in range(len(new_title)):
             if new_title[i] == 'Ą':
                 new_title[i] = 'A'
@@ -56,7 +56,7 @@ class Clock:
                 new_title[i] = 'L'
             elif new_title[i] == 'Ń' or new_title[i] == 'ń':
                 new_title[i] = 'N'
-            elif new_title[i] == 'Ó' or new_title[i]=='ó':
+            elif new_title[i] == 'Ó' or new_title[i] =='ó':
                 new_title[i] = 'O'
             elif new_title[i] == 'Ś':
                 new_title[i] = 'S'
@@ -68,9 +68,7 @@ class Clock:
         colorWipe(self.strip, Color(0, 0, 0), 0)
         i = 0
         name = str.upper(name)
-        print(name)
-        name_2 = str(self.get_rid_of_polish_sign(name))
-        print(name_2)
+        name_2 = self.get_rid_of_polish_sign(name)
         self.queue = np.array(6*[10*[False]])
         for letter in name_2:
                 if letter == ' ':
