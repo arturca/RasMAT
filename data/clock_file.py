@@ -70,7 +70,9 @@ class Clock:
         colorWipe(self.strip, Color(0, 0, 0), 0)
         i = 0
         name = str.upper(name)
+        print(name)
         name_2 = self.get_rid_of_polish_sign(name)
+        print(name_2)
         self.queue = np.array(6*[10*[False]])
         for letter in name_2:
                 if letter == ' ':
