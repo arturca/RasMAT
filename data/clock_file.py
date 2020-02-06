@@ -44,13 +44,32 @@ class Clock:
             self.queue = self.queue[:, 1:]
             time.sleep(1)
 
-
+    def get_rid_of_polish_sign(self, title):
+        for i in range(len(title)):
+            if title[i] == 'Ą':
+                title[i] = 'A'
+            elif title[i] == 'Ć':
+                title[i] = 'A'
+            elif title[i] == 'Ł':
+                title[i] = 'L'
+            elif title[i] == 'Ń':
+                title[i] = 'N'
+            elif title[i] == 'Ó':
+                title[i] = 'O'
+            elif title[i] == 'S':
+                title[i] = 'Ś'
+            elif title[i] == 'Ń':
+                title[i] = 'N'
+            elif title[i] == 'Ź' or title[i] == 'Ż':
+                title[i] = 'Z'
+        return title
     def print_song_name(self, name):
         colorWipe(self.strip, Color(0, 0, 0), 0)
         #time.sleep(1)
         #return
         i = 0
         name = str.upper(name)
+        name = self.get_rid_of_polish_sign(name)
         self.queue = np.array(6*[10*[False]])
         for letter in name:
                 if 0 <= ord(letter) - 65 < len(digits_and_letters.letters_list):

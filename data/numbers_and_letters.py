@@ -160,7 +160,7 @@ M = [[True, False, False, True],
 
 N = [[True, False, False, True],
      [True, True, False, True],
-     [True, True, True, True],
+     [True, True, False, True],
      [True, False, True, True],
      [True, False, True, True],
      [True, False, False, True]]
