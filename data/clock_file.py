@@ -46,23 +46,23 @@ class Clock:
     def get_rid_of_polish_sign(self, title):
         new_title = title
         for i in range(len(new_title)):
-            if new_title[i] == 'Ą':
+            if new_title[i] == 'ą':
                 new_title[i] = 'A'
-            elif new_title[i] == 'Ę':
+            elif new_title[i] == 'ę':
                 new_title[i] = 'E'
-            elif new_title[i] == 'Ć':
+            elif new_title[i] == 'ć':
                 new_title[i] = 'C'
-            elif new_title[i] == 'Ł':
+            elif new_title[i] == 'ł':
                 new_title[i] = 'L'
-            elif new_title[i] == 'Ń':
+            elif new_title[i] == 'ń':
                 new_title[i] = 'N'
-            elif new_title[i] == 'Ó':
+            elif new_title[i] == 'ó':
                 new_title[i] = 'O'
-            elif new_title[i] == 'Ś':
+            elif new_title[i] == 'ś':
                 new_title[i] = 'S'
-            elif new_title[i] == 'Ń':
+            elif new_title[i] == 'ń':
                 new_title[i] = 'N'
-            elif new_title[i] == 'Ź' or new_title[i] == 'Ż':
+            elif new_title[i] == 'ź' or new_title[i] == 'ż':
                 new_title[i] = 'Z'
         return new_title
 
