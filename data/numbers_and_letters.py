@@ -89,10 +89,10 @@ C = [[True, True, True, True],
      [True, True, True, True]]
 
 D = [[True, True, True, False],
-     [True, False, True, True],
      [True, False, False, True],
      [True, False, False, True],
-     [True, False, True, True],
+     [True, False, False, True],
+     [True, False, False, True],
      [True, True, True, False]]
 
 E = [[True, True, True, True],
@@ -242,11 +242,11 @@ Y = [[True, False, False, True],
      [False, True, True, False],
      [False, False, True, False]]
 
-Z =[[False, True, True, True],
+Z =[[True, True, True, True],
      [False, False, False, True],
      [False, True, True, False],
      [False, True, False, False],
-     [True, True, False, False],
+     [True, False, False, False],
      [True, True, True, True]]
 
 

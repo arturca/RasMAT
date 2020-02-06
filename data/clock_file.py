@@ -35,14 +35,13 @@ class Clock:
             print("teraz colorWipe(self.strip, Color(0, 0, 0), 0)")
             colorWipe(self.strip, Color(0, 0, 0), 0)
             self.strip.show()
-            print("juz po")
             for i in range(6):
                 for j in range(10):
                     if self.queue[i][j]:
                         self.strip.setPixelColor(helper_list[i+2][j], Color(255, 0, 0))
             self.strip.show()
             self.queue = self.queue[:, 1:]
-            time.sleep(1)
+            time.sleep(0.6)
 
     def get_rid_of_polish_sign(self, title):
         for i in range(len(title)):
