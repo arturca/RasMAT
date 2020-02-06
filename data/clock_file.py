@@ -66,13 +66,12 @@ class Clock:
         return title
     def print_song_name(self, name):
         colorWipe(self.strip, Color(0, 0, 0), 0)
-        #time.sleep(1)
-        #return
         i = 0
         name = str.upper(name)
-        name = self.get_rid_of_polish_sign(name)
+        name_2 = self.get_rid_of_polish_sign(name)
         self.queue = np.array(6*[10*[False]])
-        for letter in name:
+        for letter in name_2:
+                print(letter)
                 if 0 <= ord(letter) - 65 < len(digits_and_letters.letters_list):
                     self.queue = np.column_stack((self.queue, np.array(digits_and_letters.letters_list[ord(letter) - 65])))
                     if letter != 'I' and letter != 'Y' and letter != 'L' and letter != 'E' and letter != 'T':
