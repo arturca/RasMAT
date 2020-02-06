@@ -50,13 +50,13 @@ class Clock:
                 new_title[i] = 'A'
             elif new_title[i] == 'Ę':
                 new_title[i] = 'E'
-            elif new_title[i] == 'Ć':
+            elif new_title[i] == 'Ć' or new_title[i] == 'ć':
                 new_title[i] = 'C'
-            elif new_title[i] == 'Ł':
+            elif new_title[i] == 'Ł' or new_title[i] == 'ł':
                 new_title[i] = 'L'
-            elif new_title[i] == 'Ń':
+            elif new_title[i] == 'Ń' or new_title[i] == 'ń':
                 new_title[i] = 'N'
-            elif new_title[i] == 'Ó':
+            elif new_title[i] == 'Ó' or new_title[i]=='ó':
                 new_title[i] = 'O'
             elif new_title[i] == 'Ś':
                 new_title[i] = 'S'
@@ -69,7 +69,7 @@ class Clock:
         i = 0
         name = str.upper(name)
         print(name)
-        name_2 = self.get_rid_of_polish_sign(name)
+        name_2 = str(self.get_rid_of_polish_sign(name))
         print(name_2)
         self.queue = np.array(6*[10*[False]])
         for letter in name_2:
