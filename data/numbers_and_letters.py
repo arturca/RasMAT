@@ -102,16 +102,16 @@ E = [[True, True, True, False],
      [True, False, False, False],
      [True, True, True, False]]
 
-F = [[True, True, True, True],
+F = [[True, True, True, False],
      [True, False, False, False],
-     [True, True, True, True],
+     [True, True, True, False],
      [True, False, False, False],
      [True, False, False, False],
      [True, False, False, False]]
 
 G = [[True, True, True, True],
      [True, False, False, False],
-     [True, True, True, True],
+     [True, False, True, True],
      [True, False, False, True],
      [True, False, False, True],
      [True, True, True, True]]
@@ -119,7 +119,7 @@ G = [[True, True, True, True],
 H = [[True, False, False, True],
      [True, False, False, False],
      [True, True, True, True],
-     [True, False, False, True],
+     [True, True, True, True],
      [True, False, False, True],
      [True, False, False, True]]
 
