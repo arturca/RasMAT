@@ -44,26 +44,28 @@ class Clock:
         self.previous_time = 'x'
 
     def get_rid_of_polish_sign(self, title):
-        for i in range(len(title)):
-            if title[i] == 'Ą':
-                title[i] = 'A'
-            elif title[i] == 'Ę':
-                title[i] = 'E'
-            elif title[i] == 'Ć':
-                title[i] = 'A'
-            elif title[i] == 'Ł':
-                title[i] = 'L'
-            elif title[i] == 'Ń':
-                title[i] = 'N'
-            elif title[i] == 'Ó':
-                title[i] = 'O'
-            elif title[i] == 'Ś':
-                title[i] = 'S'
-            elif title[i] == 'Ń':
-                title[i] = 'N'
-            elif title[i] == 'Ź' or title[i] == 'Ż':
-                title[i] = 'Z'
-        return title
+        new_title = title
+        for i in range(len(new_title)):
+            if new_title[i] == 'Ą':
+                new_title[i] = 'A'
+            elif new_title[i] == 'Ę':
+                new_title[i] = 'E'
+            elif new_title[i] == 'Ć':
+                new_title[i] = 'C'
+            elif new_title[i] == 'Ł':
+                new_title[i] = 'L'
+            elif new_title[i] == 'Ń':
+                new_title[i] = 'N'
+            elif new_title[i] == 'Ó':
+                new_title[i] = 'O'
+            elif new_title[i] == 'Ś':
+                new_title[i] = 'S'
+            elif new_title[i] == 'Ń':
+                new_title[i] = 'N'
+            elif new_title[i] == 'Ź' or new_title[i] == 'Ż':
+                new_title[i] = 'Z'
+        return new_title
+
     def print_song_name(self, name):
         colorWipe(self.strip, Color(0, 0, 0), 0)
         i = 0
@@ -82,7 +84,6 @@ class Clock:
         self.queue = np.column_stack((self.queue, np.array(6*[10*[False]])))
         self.queue = np.column_stack((self.queue, self.queue))
         self.paint_scrolling_name()
-
 
     def check_logs_file(self, filename):
         logs_file = open(filename)
