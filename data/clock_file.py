@@ -1,7 +1,5 @@
-import time
-from time import gmtime, strftime
-# you need to line below to use more complex like polish symbols
-#!/usr/bin/env python
+
+# !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import re
