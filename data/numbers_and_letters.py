@@ -88,12 +88,12 @@ C = [[True, True, True, True],
      [True, False, False, True],
      [True, True, True, True]]
 
-D = [[True, True, True, True],
+D = [[True, True, True, False],
      [True, False, True, True],
      [True, False, False, True],
      [True, False, False, True],
      [True, False, True, True],
-     [True, True, True, True]]
+     [True, True, True, False]]
 
 E = [[True, True, True, True],
      [True, False, False, False],
