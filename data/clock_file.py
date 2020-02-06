@@ -32,7 +32,6 @@ class Clock:
     def paint_scrolling_name(self):
         # print(self.queue)
         while len(self.queue[0]) > 10:
-            print("teraz colorWipe(self.strip, Color(0, 0, 0), 0)")
             colorWipe(self.strip, Color(0, 0, 0), 0)
             self.strip.show()
             for i in range(6):
