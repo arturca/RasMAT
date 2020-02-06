@@ -33,7 +33,6 @@ class Clock:
             print("teraz colorWipe(self.strip, Color(0, 0, 0), 0)")
             colorWipe(self.strip, Color(0, 0, 0), 0)
             self.strip.show()
-            time.sleep(2)
             print("juz po")
             for i in range(5):
                 for j in range(10):
@@ -41,7 +40,7 @@ class Clock:
                         self.strip.setPixelColor(helper_list[i+2][j], Color(255, 0, 0))
             self.strip.show()
             print(i, "-- druk")
-            time.sleep(5)
+            time.sleep(0.8)
             self.queue = self.queue[:, 1:]
             time.sleep(1)
 
