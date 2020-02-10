@@ -43,8 +43,9 @@ class Clock:
             time.sleep(0.1)
         self.previous_time = 'x'
 
-    def get_rid_of_polish_sign(self, title):
-        new_title = list(title)
+    def get_rid_of_polish_sign(self, titlee):
+        new_title = list(titlee)
+
         for i in range(len(new_title)):
             if new_title[i] == 'Ą':
                 new_title[i] = 'A'
