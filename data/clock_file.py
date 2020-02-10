@@ -83,6 +83,7 @@ class Clock:
         name = str.upper(name)
         name_2 = self.get_rid_of_polish_sign(name)
         print(name_2)
+        name_2 = str.upper(name_2)
         self.queue = np.array(6*[10*[False]])
         for letter in name_2:
                 if letter == ' ':
