@@ -52,7 +52,7 @@ class Clock:
                    "\xc3\xB3": "o", "\xc5\x9b": "s", "\xc5\xba": "z", "\xc5\xbc": "z"}
 
         for x in polskie.keys():
-            title = string.replace(title, x, polskie[x])
+            title = str.replace(title, x, polskie[x])
         return title
         # for i in range(len(u'new_title')):
         #     print(i)
