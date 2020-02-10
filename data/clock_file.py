@@ -44,33 +44,25 @@ class Clock:
         self.previous_time = 'x'
 
     def get_rid_of_polish_sign(self, title):
-        new_title = title
-        new_title.replace('Ą','A')
-        new_title.replace('Ę','E')
-        new_title.replace('Ć','C')
-        new_title.replace('Ł','L')
-        new_title.replace('Ń','N')
-        new_title.replace('Ó','O')
-        new_title.replace('Ś','S')
-        new_title.replace('Ź', 'Z')
-        # for i in range(len(new_title)):
-        #     if new_title[i] == 'Ą':
-        #         new_title[i] = 'A'
-        #     elif new_title[i] == 'Ę':
-        #         new_title[i] = 'E'
-        #     elif new_title[i] == 'Ć' or new_title[i] == 'ć':
-        #         new_title[i] = 'C'
-        #     elif new_title[i] == 'Ł' or new_title[i] == 'ł':
-        #         new_title[i] = 'L'
-        #     elif new_title[i] == 'Ń' or new_title[i] == 'ń':
-        #         new_title[i] = 'N'
-        #     elif new_title[i] == 'Ó' or new_title[i] =='ó':
-        #         new_title[i] = 'O'
-        #     elif new_title[i] == 'Ś':
-        #         new_title[i] = 'S'
-        #     elif new_title[i] == 'Ź' or new_title[i] == 'Ż':
-        #         new_title[i] = 'Z'
-        return new_title
+        new_title = list(title)
+        for i in range(len(new_title)):
+            if new_title[i] == 'Ą':
+                new_title[i] = 'A'
+            elif new_title[i] == 'Ę':
+                new_title[i] = 'E'
+            elif new_title[i] == 'Ć' or new_title[i] == 'ć':
+                new_title[i] = 'C'
+            elif new_title[i] == 'Ł' or new_title[i] == 'ł':
+                new_title[i] = 'L'
+            elif new_title[i] == 'Ń' or new_title[i] == 'ń':
+                new_title[i] = 'N'
+            elif new_title[i] == 'Ó' or new_title[i] =='ó':
+                new_title[i] = 'O'
+            elif new_title[i] == 'Ś':
+                new_title[i] = 'S'
+            elif new_title[i] == 'Ź' or new_title[i] == 'Ż':
+                new_title[i] = 'Z'
+        return ''.join(new_title)
 
     def print_song_name(self, name):
         colorWipe(self.strip, Color(0, 0, 0), 0)
