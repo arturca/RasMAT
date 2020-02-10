@@ -43,31 +43,39 @@ class Clock:
             time.sleep(0.1)
         self.previous_time = 'x'
 
-    def get_rid_of_polish_sign(self, titlee):
-        new_title = list(titlee)
+    def get_rid_of_polish_sign(self, title):
+        # new_title = list(titlee)
+        polskie = {"\xc4\x84": "A", "\xc4\x86": "C",
+                   "\xc4\x98": "E", "\xc5\x81": "L", "\xc5\x83": "N", "\xc3\x93": "O",
+                   "\xc5\x9a": "S", "\xc5\xb9": "Z", "\xc5\xbb": "Z", "\xc4\x85": "a",
+                   "\xc4\x87": "c", "\xc4\x99": "e", "\xc5\x82": "l", "\xc5\x84": "n",
+                   "\xc3\xB3": "o", "\xc5\x9b": "s", "\xc5\xba": "z", "\xc5\xbc": "z"}
 
-        for i in range(len(new_title)):
-            print(i)
-            if new_title[i] == 'Ą':
-                new_title[i] = 'A'
-            elif new_title[i] == 'Ę':
-                new_title[i] = 'E'
-            elif new_title[i] == 'Ć' or new_title[i] == 'ć':
-                print("jesst Ć")
-                new_title[i] = 'C'
-            elif new_title[i] == 'Ł' or new_title[i] == 'ł':
-                new_title[i] = 'L'
-            elif new_title[i] == 'Ń' or new_title[i] == 'ń':
-                new_title[i] = 'N'
-            elif new_title[i] == 'Ó' or new_title[i] == 'ó':
-                print("jesst ó")
-                new_title[i] = 'O'
-            elif new_title[i] == 'Ś':
-                new_title[i] = 'S'
-            elif new_title[i] == 'Ź' or new_title[i] == 'Ż':
-                new_title[i] = 'Z'
-        print('STOP'.join(new_title) + '--1')
-        return ''.join(new_title)
+        for x in polskie.keys():
+            title = string.replace(title, x, polskie[x])
+        return title
+        # for i in range(len(u'new_title')):
+        #     print(i)
+        #     if new_title[i] == 'Ą':
+        #         new_title[i] = 'A'
+        #     elif new_title[i] == 'Ę':
+        #         new_title[i] = 'E'
+        #     elif new_title[i] == 'Ć' or new_title[i] == 'ć':
+        #         print("jesst Ć")
+        #         new_title[i] = 'C'
+        #     elif new_title[i] == 'Ł' or new_title[i] == 'ł':
+        #         new_title[i] = 'L'
+        #     elif new_title[i] == 'Ń' or new_title[i] == 'ń':
+        #         new_title[i] = 'N'
+        #     elif new_title[i] == 'Ó' or new_title[i] == 'ó':
+        #         print("jesst ó")
+        #         new_title[i] = 'O'
+        #     elif new_title[i] == 'Ś':
+        #         new_title[i] = 'S'
+        #     elif new_title[i] == 'Ź' or new_title[i] == 'Ż':
+        #         new_title[i] = 'Z'
+        # print('STOP'.join(new_title) + '--1')
+        # return ''.join(new_title)
 
     def print_song_name(self, name):
         colorWipe(self.strip, Color(0, 0, 0), 0)
