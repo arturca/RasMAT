@@ -40,7 +40,7 @@ class Clock:
                         self.strip.setPixelColor(helper_list[i+2][j], Color(255, 0, 0))
             self.strip.show()
             self.queue = self.queue[:, 1:]
-            time.sleep(0.1)
+            time.sleep(0.15)
         self.previous_time = 'x'
 
     def get_rid_of_polish_sign(self, title):
