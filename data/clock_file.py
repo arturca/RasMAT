@@ -80,7 +80,6 @@ class Clock:
     def print_song_name(self, name):
         colorWipe(self.strip, Color(0, 0, 0), 0)
         i = 0
-        name = str.upper(name)
         name_2 = self.get_rid_of_polish_sign(name)
         print(name_2)
         name_2 = str.upper(name_2)

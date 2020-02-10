@@ -117,7 +117,7 @@ G = [[True, True, True, True],
      [True, True, True, True]]
 
 H = [[True, False, False, True],
-     [True, False, False, False],
+     [True, False, False, True],
      [True, True, True, True],
      [True, True, True, True],
      [True, False, False, True],
