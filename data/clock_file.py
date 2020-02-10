@@ -52,6 +52,7 @@ class Clock:
             elif new_title[i] == 'Ę':
                 new_title[i] = 'E'
             elif new_title[i] == 'Ć' or new_title[i] == 'ć':
+                print("jesst Ć")
                 new_title[i] = 'C'
             elif new_title[i] == 'Ł' or new_title[i] == 'ł':
                 new_title[i] = 'L'
