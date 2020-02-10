@@ -66,7 +66,7 @@ class Clock:
                 new_title[i] = 'S'
             elif new_title[i] == 'Ź' or new_title[i] == 'Ż':
                 new_title[i] = 'Z'
-        print('STOP +'.join(new_title) + '--1')
+        print('STOP'.join(new_title) + '--1')
         return ''.join(new_title)
 
     def print_song_name(self, name):
