@@ -6,6 +6,6 @@
  Requirements:\
  sudo pip3 install rpi_ws281x\
  
- # Usefull pages:
-https://tutorials-raspberrypi.com/connect-control-raspberry-pi-ws2812-rgb-led-strips/ \
+ ## Usefull pages:
+https://tutorials-raspberrypi.com/connect-control-raspberry-pi-ws2812-rgb-led-strips/
  
